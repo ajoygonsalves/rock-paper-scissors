@@ -31,10 +31,12 @@ function playRound(playerSelection, computerSelection) {
 
 function game(playerSelection) {
   let games = [];
-  for (let i = 0; i < 5; i++) {
-    const computerSelection = getComputerChoice();
-    games.push(playRound(playerSelection, computerSelection));
-  }
+  const computerSelection = getComputerChoice();
+  games.push(playRound(playerSelection, computerSelection));
+  // for (let i = 0; i < 5; i++) {
+  //   const computerSelection = getComputerChoice();
+  //   games.push(playRound(playerSelection, computerSelection));
+  // }
   return games;
 }
 
