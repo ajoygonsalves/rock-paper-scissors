@@ -40,6 +40,13 @@ function game(playerSelection) {
   return games;
 }
 
-const playerSelection = prompt("What do you choose?");
-const computerSelection = getComputerChoice();
-console.log(game(playerSelection, computerSelection));
+function handleButtonClick(e) {
+  const playerChoice = e.target.dataset.key;
+  const computerChoice = getComputerChoice();
+  const paragraph = document.querySelector("p");
+  console.log(game(playerChoice, computerChoice));
+  paragraph.innerText = game(playerChoice, computerChoice);
+}
+
+const button = document.querySelectorAll("button");
+button.forEach((button) => button.addEventListener("click", handleButtonClick));
